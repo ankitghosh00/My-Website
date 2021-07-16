@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {% block title %}contact{% endblock title %} {% block body %}
+
+<div class="container-fluid px-0">
+    <img src="https://source.unsplash.com/user/erondu/2500x500/?phone,contact" class="d-block w-100 px-0" alt="...">
+</div>
+
+<div class="container my-4 py-4 mb-3">
+    <h1 class="text-center">Contact Me</h1>
+    <from method="post" action="/contact">
+{% csrf_token %}
+
+<form class="row g-3 needs-validation my-4"  novalidate>
+  <div class="col-md-6">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+  </div>
+
+  <div class="col-md-6">
+    <label for="email" class="form-label">email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+  </div>
+
+  <div class="col-md-4">
+    <label for="City" class="form-label">City</label>
+    <input type="text" class="form-control" id="City" name="City" placeholder="Enter your City " required>
+  </div>
+
+  <div class="col-md-4">
+    <label for="State" class="form-label">State</label>
+    <input type="text" class="form-control" id="State" name="State" placeholder="Enter your State " required>
+  </div>
+
+  <div class="col-md-4">
+    <label for="Zip" class="form-label">Zip</label>
+    <input type="text" class="form-control" id="Zip" name="Zip" placeholder="Enter your city Zip" required>
+  </div>
+    
+  <div class="mb-3">
+    <label for="desc" class="form-label">comment</label>
+    <textarea class="form-control" id="desc" name="desc" placeholder="Leave a comment here"  style="height: 100px" required></textarea>
+  </div>
+
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Submit form</button>
+  </div>
+</form>
+{% endblock body %}
